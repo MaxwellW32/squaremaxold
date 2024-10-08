@@ -1,0 +1,15 @@
+.outerDiv h1 {
+    font-size: 3rem;
+
+}
+
+.innerDiv * {
+    all: unset;
+    display: revert;
+}
+
+.innerDiv h1 {
+    font-weight: bold;
+    /* font-size: 2rem; */
+    text-transform: uppercase;
+}

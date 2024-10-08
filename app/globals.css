@@ -1,0 +1,394 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+zindex rules
+
+nav: 99
+popout: 999
+important: 1000
+*/
+
+:root {
+    --primaryColor: #e52b50;
+    --secondaryColor: #F4F7FC;
+    --tertiaryColor: #0582f0;
+    --backgroundColor: #252628;
+
+    --fadedWhite: #ddd;
+    --fadedWhite2: #777;
+    --faded3: #aaa;
+    --fadedTextColor: #111;
+
+    --mediumeFontWeight: 500;
+    --mediumFontWeight: 500;
+
+
+    --largerFontSize: 2.3rem;
+    --largeFontSize: 2rem;
+    --mediumFontSize: 1.3rem;
+    --regularFontSize: 1rem;
+    --smallFontSize: .7rem;
+
+    --largeIconSize: 3rem;
+    --smallIconSize: 1.2rem;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* element styels */
+.noScrollBar::-webkit-scrollbar {
+    display: none;
+}
+
+*,
+*::before,
+*::after {
+    /* border: 1px solid red !important; */
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--backgroundColor);
+}
+
+*::-webkit-scrollbar {
+    height: .2rem;
+    width: .2rem;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: #ffffff;
+
+}
+
+body {
+    font-size: var(--regularFontSize);
+}
+
+h1 {
+    font-weight: bold;
+    font-size: var(--largeFontSize);
+    text-transform: capitalize;
+
+}
+
+h2 {
+    font-size: var(--mediumFontSize);
+    font-weight: bold;
+}
+
+h3 {
+    font-weight: bold;
+}
+
+p {
+    /* max-width: 50ch; */
+}
+
+svg {
+    width: 1rem;
+    aspect-ratio: 1/1;
+    transition: scale 600ms;
+}
+
+svg:hover {
+    scale: 1.1
+}
+
+input,
+textarea {
+    padding: 1rem;
+    background-color: var(--secondaryColor);
+    border-radius: .2rem;
+    border: 1px solid #ddd;
+}
+
+input:focus,
+textarea:focus {
+    background-color: #fff;
+    outline: none;
+}
+
+.mainButton {
+    background-color: var(--primaryColor);
+    border-radius: .5rem;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 1rem 2rem;
+    transition: filter 400ms;
+    white-space: nowrap;
+}
+
+.mainButton:hover {
+    filter: brightness(.8);
+}
+
+.secondaryButton {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: .2rem;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 1rem 2rem;
+    transition: background-color 400ms, color 400ms;
+
+}
+
+.secondaryButton>svg {
+    fill: #fff
+}
+
+.secondaryButton:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.secondaryButton:hover>svg {
+    fill: #000
+}
+
+
+.thirdButton {
+    text-transform: capitalize;
+    background-color: var(--secondaryColor);
+    text-transform: uppercase;
+    color: #000;
+    font-weight: bold;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    padding-left: 1rem;
+    transition: background-color 400ms, color 400ms;
+}
+
+
+.thirdButton svg {
+    fill: #fff
+}
+
+.thirdButton>div {
+    background-color: var(--primaryColor);
+    transition: background-color 400ms;
+}
+
+.thirdButton:hover>div {
+    background-color: #000
+}
+
+
+.thirdButton:hover {
+    background-color: var(--primaryColor);
+    color: #fff;
+}
+
+.thirdButtonHovering>div {
+    background-color: #000
+}
+
+
+.thirdButtonHovering {
+    background-color: var(--primaryColor);
+    color: #fff;
+}
+
+
+
+section {
+    padding: 2rem 1rem;
+}
+
+
+
+
+/* custom styels */
+
+.resizeSvg>svg {
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+
+
+.highlight {
+    color: var(--primaryColor);
+    fill: var(--primaryColor);
+}
+
+.hoverHighlight:hover {
+    transition: color 400ms, fill 400ms;
+}
+
+.hoverHighlight:hover {
+    color: var(--primaryColor);
+    fill: var(--primaryColor);
+}
+
+.noDisplay {
+    display: none;
+}
+
+.fadeIn {
+    animation: fadeIn calc(var(--fadeTime, 1s)) both;
+}
+
+.closeButton {
+    transition: color 200ms, rotate 200ms;
+}
+
+.closeButton:hover {
+    color: var(--primaryColor);
+    rotate: 10deg;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.slideInCont {
+    overflow: hidden;
+}
+
+.slideIn {
+    position: relative;
+    animation: slideIn 1s both;
+    transform-origin: bottom left;
+}
+
+@keyframes slideIn {
+    0% {
+        translate: 0 100%;
+    }
+
+    100% {
+        translate: 0 0%;
+    }
+}
+
+.slideFromRight {
+    position: relative;
+    animation: slideFromRight 1s both;
+}
+
+@keyframes slideFromRight {
+    0% {
+        translate: 100vw 0;
+    }
+
+    100% {
+        translate: 0 0;
+    }
+}
+
+.slideFromLeft {
+    position: relative;
+    animation: slideFromLeft 1s both;
+}
+
+@keyframes slideFromLeft {
+    0% {
+        translate: -100vw 0;
+    }
+
+    100% {
+        translate: 0 0;
+    }
+}
+
+
+
+.supportingTitle1 {
+    text-transform: uppercase;
+    position: relative;
+    justify-self: flex-start;
+}
+
+.supportingTitle1::before {
+    content: "";
+    position: absolute;
+    top: -0.5rem;
+    left: 0;
+    width: 100%;
+    border-top: solid 2px #fff;
+    text-transform: uppercase;
+}
+
+.supportingTitle2 {
+    text-transform: uppercase;
+    color: var(--primaryColor);
+    font-weight: bold;
+}
+
+.snap {
+    scroll-snap-type: x mandatory;
+}
+
+.snap>* {
+    scroll-snap-align: start;
+}
+
+
+
+
+
+
+
+
+.reset * {
+    all: unset;
+    display: revert;
+    box-sizing: border-box;
+}
+
+.reset img,
+.reset svg {
+    display: block;
+}
+
+.reset img {
+    overflow: hidden;
+}
+
+.reset ul,
+.reset ol,
+.reset li {
+    list-style: none;
+}
+
+.reset a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.reset .material-symbols-outlined {
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+.hide {
+    display: none !important;
+}
+
+.hoverUnderline:hover {
+    text-decoration: underline;
+}

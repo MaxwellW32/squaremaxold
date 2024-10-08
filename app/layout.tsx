@@ -10,14 +10,15 @@ import Script from "next/script";
 const rubik = Rubik({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://anthsolutions.com'),
-  title: "Anth-Solutions - Expert Web Development & Mobile App Solutions | Next JS & React Native Specialists",
-  description: "Anth-Solutions is a leading web development agency specializing in high-performance Next JS websites and seamless React Native mobile app solutions. Our expert team delivers tailored digital experiences, from custom e-commerce platforms to robust software solutions. Contact us to elevate your online presence",
+  metadataBase: new URL('https://squaremax.com'),
+  title: "SquareMax - Expert Web Development & Mobile App Solutions | Next JS & React Native Specialists",
+  description: "SquareMax is a leading web development agency specializing in high-performance Next JS websites and seamless React Native mobile app solutions. Our expert team delivers tailored digital experiences, from custom e-commerce platforms to robust software solutions. Contact us to elevate your online presence",
   openGraph: {
-    title: "Anth-Solutions - Expert Web Development & Mobile App Solutions",
-    description: "Anth-Solutions is a leading web development agency specializing in high-performance Next JS websites and seamless React Native mobile app solutions."
+    title: "SquareMax - Expert Web Development & Mobile App Solutions",
+    description: "SquareMax is a leading web development agency specializing in high-performance Next JS websites and seamless React Native mobile app solutions."
   }
 };
+
 
 export default function RootLayout({
   children,
@@ -37,7 +38,10 @@ export default function RootLayout({
             title: "Services",
             link: "/services",
             subMenu: servicesData.map(eachService => {
-              return { link: eachService.link, title: eachService.name }
+              return {
+                title: eachService.name,
+                link: eachService.link
+              }
             })
           }, {
             title: "Testimonials",
@@ -58,17 +62,6 @@ export default function RootLayout({
         ]}
         />
         {children}
-
-        <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-8MZXW48V31" ></Script>
-        <Script id="google-analytics" strategy="afterInteractive" >
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-8MZXW48V31');
-         `}
-        </Script>
         <Footer />
       </body>
     </html>

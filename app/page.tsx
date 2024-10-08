@@ -22,7 +22,6 @@ export default function Home() {
     <main>
       <div className={styles.graphicCont} style={{ minHeight: "400px", overflow: "hidden", position: "relative", display: "grid", alignItems: 'center', justifyItems: "center" }}>
         <svg className={styles.graphic1} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
-
           <path
             d="M136.31 126.37a34.26 34.26 0 0 1-34.26-34.26 34.26 34.26 0 0 1 34.26-34.26 34.26 34.26 0 0 1 34.26 34.26 34.26 34.26 0 0 1-34.26 34.26Z"
             style={{
@@ -1547,14 +1546,6 @@ export default function Home() {
           link: "/contact",
           image: "https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg"
         },
-        // {
-        //   supportingTitle: "Cloud-First Approach",
-        //   Heading: "Cloud Solutions Deployment",
-        //   summary: "Embrace the flexibility and scalability of cloud computing with our comprehensive deployment services.",
-        //   buttonText: "Explore Cloud Solutions",
-        //   link: "/contact",
-        //   image: "https://images.pexels.com/photos/6466141/pexels-photo-6466141.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-        // },
         {
           supportingTitle: "Innovative Design & Development",
           Heading: "Incredible Website Creation",

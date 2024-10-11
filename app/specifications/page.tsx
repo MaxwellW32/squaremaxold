@@ -7,12 +7,8 @@ import { toast } from 'react-hot-toast'
 import { sendNodeEmail } from '@/serverFunctions/handleNodeEmails'
 import { clientSpecificationKeys, moreFormInfoType, pagesType, specificationsFormSchema, specificationsObjType } from '@/types'
 
-//make object that stores info
-//use specific ids for questions / presentations
 //design a multi page interface - requred / optional questions
-//send info to email 
-
-//ensure required working zod
+//add saving
 
 export default function Page() {
     const [initialSpecificationsObj, initialSpecificationsObjSet] = useState<specificationsObjType>({

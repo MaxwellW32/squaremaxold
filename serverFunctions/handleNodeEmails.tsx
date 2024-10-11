@@ -26,10 +26,10 @@ export async function sendNodeEmail(input: {
     moreFormInfo: moreFormInfoType,
     pages: pagesType,
 }) {
-    const basePath = process.cwd()
-    const locationToTempaltes = path.join(basePath, "templates", "simple.html")
-    const htmlSource = await fs.readFile(locationToTempaltes, { encoding: "utf-8" })
-    const template = Handlebars.compile(htmlSource);
+    // const basePath = process.cwd()
+    // const locationToTempaltes = path.join(basePath, "templates", "simple.html")
+    // const htmlSource = await fs.readFile(locationToTempaltes, { encoding: "utf-8" })
+    // const template = Handlebars.compile(htmlSource);
 
     const info = await transporter.sendMail({
         from: email,

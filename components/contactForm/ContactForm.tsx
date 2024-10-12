@@ -1,5 +1,5 @@
 "use client"
-import React, { useState, FormEvent } from 'react'
+import React, { useState, FormEvent, useEffect } from 'react'
 import styles from "./styles.module.css"
 import { toast } from 'react-hot-toast'
 import TextInput from '../reusables/textInput/TextInput'
@@ -7,6 +7,7 @@ import TextAreaInput from '../reusables/textAreaInput/TextAreaInput'
 import ShowMore from '../showMore/ShowMore'
 import { sendNodeEmail } from '@/serverFunctions/handleNodeEmails'
 import { userForm, userFormSchema } from '@/types'
+import { retreiveFromLocalStorage, saveToLocalStorage } from '@/utility/saveToStorage'
 
 export default function ContactForm() {
 
@@ -36,6 +37,27 @@ export default function ContactForm() {
     const [formErrors, formErrorsSet] = useState<Partial<{
         [key in userFormKey]: string
     }>>({})
+
+    const [checkedForSave, checkedForSaveSet] = useState(false)
+
+    //read save from storage
+    useEffect(() => {
+        checkedForSaveSet(true)
+
+        const seenContactForm: userForm | null = retreiveFromLocalStorage("contact")
+        if (seenContactForm === null) return
+
+        formObjSet({ ...seenContactForm })
+    }, [])
+
+    //save form to storage
+    useEffect(() => {
+        if (!checkedForSave) return
+
+        saveToLocalStorage("contact", formObj)
+
+    }, [checkedForSave, formObj])
+
 
     function checkIfValid(seenFormObj: userForm, seenName: keyof userForm, schema: any) {
         const testSchema = schema.pick({ [seenName]: true }).safeParse(seenFormObj);
@@ -162,7 +184,7 @@ export default function ContactForm() {
             </div>
 
 
-            <button disabled={!userFormSchema.safeParse(formObj).success} type='submit' style={{ justifySelf: "flex-end", opacity: !userFormSchema.safeParse(formObj).success ? ".6" : "", backgroundColor: "var(--primaryColor)", padding: '1rem 2rem', borderRadius: ".2rem", marginTop: '1rem' }}>Send Message</button>
+            <button className='mainButton' disabled={!userFormSchema.safeParse(formObj).success} type='submit' style={{ justifySelf: "flex-end", marginTop: '1rem' }}>Send Message</button>
         </form>
     )
 }

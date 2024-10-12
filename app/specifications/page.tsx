@@ -1,5 +1,5 @@
 "use client"
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styles from "./page.module.css"
 import SpecificationsTextInput from '@/components/reusables/specificationsTextInput/SpecificationsInput'
 import SpecificationsTextAreaInput from '@/components/reusables/specificationsTextAreaInput/SpecificationsTextAreaInput'
@@ -7,9 +7,12 @@ import { toast } from 'react-hot-toast'
 import { sendNodeEmail } from '@/serverFunctions/handleNodeEmails'
 import { clientSpecificationKeys, moreFormInfoType, pagesType, specificationsFormSchema, specificationsObjType } from '@/types'
 import Image from 'next/image'
+import { retreiveFromLocalStorage, saveToLocalStorage } from '@/utility/saveToStorage'
 
-//design a multi page interface - requred / optional questions
 //add saving
+//check for save on load
+//as changes happen write them to storage
+//have checkedForSave indicator before writing
 
 export default function Page() {
     const [initialSpecificationsObj, initialSpecificationsObjSet] = useState<specificationsObjType>({
@@ -187,6 +190,24 @@ export default function Page() {
     })
 
     const formContRef = useRef<HTMLDivElement | null>(null)
+    const [checkedForSave, checkedForSaveSet] = useState(false)
+
+    //read save from storage
+    useEffect(() => {
+        checkedForSaveSet(true)
+        const seenSpecifications: specificationsObjType | null = retreiveFromLocalStorage("specifications")
+        if (seenSpecifications === null) return
+
+        specificationsObjSet({ ...seenSpecifications })
+    }, [])
+
+    //save form to storage
+    useEffect(() => {
+        if (!checkedForSave) return
+
+        saveToLocalStorage("specifications", specificationsObj)
+
+    }, [checkedForSave, specificationsObj])
 
     function checkIfValid(seenFormObj: specificationsObjType, seenName: keyof specificationsObjType, schema: any) {
         const testSchema = schema.pick({ [seenName]: true }).safeParse(seenFormObj);
@@ -389,7 +410,7 @@ export default function Page() {
 
                                         <div style={{ flex: "1 1 400px", display: "grid", gap: "1rem" }}>
                                             <div style={{ textAlign: "center" }}>
-                                                <h2>Customize your Website</h2>
+                                                <h2>Customize Your Website</h2>
                                                 <p style={{ color: "", fontSize: "var(--smallFontSize)" }}>Required Inputs are outlined by a golden line</p>
                                             </div>
 
@@ -397,6 +418,8 @@ export default function Page() {
 
                                             <button style={{ justifySelf: "center" }} className='secondaryButton'
                                                 onClick={() => {
+                                                    scrollToForm()
+
                                                     currentPageIndexSet(prev => prev + 1)
                                                 }}
                                             >Get Started</button>

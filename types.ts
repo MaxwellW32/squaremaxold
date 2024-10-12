@@ -46,3 +46,15 @@ export type pagesType = {
         extraInfo?: JSX.Element,
     }
 }
+
+
+
+
+export const userFormSchema = Z.object({
+    name: Z.string().min(1),
+    email: Z.string().email(),
+    message: Z.string().min(1),
+    company: Z.string(),
+})
+
+export type userForm = Z.infer<typeof userFormSchema>

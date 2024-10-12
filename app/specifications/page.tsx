@@ -388,7 +388,7 @@ export default function Page() {
 
                                         <div style={{ flex: "1 1 400px", display: "grid", gap: "1rem" }}>
                                             <div style={{ textAlign: "center" }}>
-                                                <h2>Enter your Specifications</h2>
+                                                <h2>Customize your Website</h2>
                                                 <p style={{ color: "", fontSize: "var(--smallFontSize)" }}>Required Inputs are outlined by a golden line</p>
                                             </div>
 

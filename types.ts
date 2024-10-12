@@ -43,5 +43,6 @@ export type pagesType = {
     [key: number]: {
         title?: string,
         questions: clientSpecificationKeys[],
+        extraInfo?: JSX.Element,
     }
 }

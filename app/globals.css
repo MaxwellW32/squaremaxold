@@ -132,6 +132,10 @@ textarea:focus {
     filter: brightness(.8);
 }
 
+.mainButton:disabled {
+    opacity: .5;
+}
+
 .secondaryButton {
     background-color: rgba(0, 0, 0, 0.4);
     border-radius: .2rem;

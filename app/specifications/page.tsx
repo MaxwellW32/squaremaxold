@@ -1,11 +1,12 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import styles from "./page.module.css"
 import SpecificationsTextInput from '@/components/reusables/specificationsTextInput/SpecificationsInput'
 import SpecificationsTextAreaInput from '@/components/reusables/specificationsTextAreaInput/SpecificationsTextAreaInput'
 import { toast } from 'react-hot-toast'
 import { sendNodeEmail } from '@/serverFunctions/handleNodeEmails'
 import { clientSpecificationKeys, moreFormInfoType, pagesType, specificationsFormSchema, specificationsObjType } from '@/types'
+import Image from 'next/image'
 
 //design a multi page interface - requred / optional questions
 //add saving
@@ -39,120 +40,119 @@ export default function Page() {
     const [moreFormInfo,] = useState<moreFormInfoType>({
         "aa": {
             label: "What is your business/organization's name?",
-            placeHolder: "Enter business name: ",
+            placeHolder: "Enter your business or organization's name",
             required: true
         },
         "ab": {
             label: "Can you describe your business and the products or services you offer?",
-            placeHolder: "What are you interested in?: ",
+            placeHolder: "Provide a brief description of your business and offerings (e.g., products, services)",
             inputType: "textarea",
             required: true
-
         },
         "ac": {
             label: "Who is your target audience?",
-            placeHolder: "Target: ",
+            placeHolder: "Describe your target audience (e.g., demographics, interests)",
             inputType: "textarea",
             required: true
         },
         "ad": {
-            label: "What are your core goals for this website? (e.g., increase sales, raise awareness) ",
-            placeHolder: "Goals: ",
+            label: "What are your core goals for this website? (e.g., increase sales, raise awareness)",
+            placeHolder: "List the main goals for your website (e.g., boost sales, engage visitors)",
             inputType: "textarea",
             required: true
         },
         "ae": {
             label: "What sets your business apart from competitors?",
-            placeHolder: "Reason: ",
+            placeHolder: "Explain what makes your business unique",
             inputType: "textarea"
         },
         "af": {
             label: "Do you already have a website? If so, what do you like or dislike about it?",
-            placeHolder: "Likes: ",
+            placeHolder: "Share your thoughts on your current website, if any (likes/dislikes)",
             inputType: "textarea"
         },
         "ag": {
             label: "What is the main action you want visitors to take on your site? (e.g., make a purchase, sign up, contact you)",
-            placeHolder: "Main Interaction?: ",
+            placeHolder: "Specify the key actions you'd like visitors to take (e.g., buy, sign up)",
             inputType: "textarea",
             required: true
         },
         "ah": {
             label: "What features do you need? (e.g., e-commerce, booking system, blog, galleries, forms)",
-            placeHolder: "Features: ",
+            placeHolder: "List any features you'd like to include (e.g., online store, blog, forms)",
             inputType: "textarea",
             required: true
         },
         "ai": {
             label: "Do you need integration with third-party services or software (e.g., payment gateways, CRM)?",
-            placeHolder: "Integrations: ",
+            placeHolder: "Mention any third-party integrations required (e.g., payment systems)",
             inputType: "textarea"
         },
         "aj": {
             label: "Do you have branding guidelines (logo, colors, typography) to follow?",
-            placeHolder: "Branding: ",
+            placeHolder: "Include any branding details (e.g., logo, colors, fonts)",
             inputType: "textarea",
             required: true
         },
         "ak": {
             label: "Are there websites you admire? What do you like about them?",
-            placeHolder: "Provide Links if you like: ",
+            placeHolder: "Feel free to provide links to websites you admire and explain why",
             inputType: "textarea"
         },
         "al": {
             label: "What look and feel are you aiming for? (e.g., professional, playful)",
-            placeHolder: "Feel: ",
+            placeHolder: "Describe the style you're looking for (e.g., clean, modern, playful)",
             inputType: "textarea",
             required: true
         },
         "am": {
             label: "Do you need a mobile-first or responsive design?",
-            placeHolder: "Layout: ",
+            placeHolder: "Indicate if you prefer a mobile-first or responsive layout",
             inputType: "textarea"
         },
         "an": {
             label: "Will you provide the content (text, images, videos) or need assistance?",
-            placeHolder: "Content provider: ",
+            placeHolder: "Let us know if you'll supply content or need help creating it",
             inputType: "textarea",
             required: true
         },
         "ao": {
             label: "How many pages will the site have?",
-            placeHolder: "3 - 5 ",
+            placeHolder: "Estimate the number of pages (e.g., Home, About, Services)",
             inputType: "textarea"
         },
         "ap": {
             label: "Do you need any custom forms (e.g., contact form, surveys)?",
-            placeHolder: "Preference: ",
+            placeHolder: "Specify any custom forms needed (e.g., contact, sign-up forms)",
             inputType: "textarea"
         },
         "aq": {
-            label: "Will there be user accounts / logins?",
-            placeHolder: "Preference: ",
+            label: "Will there be user accounts/logins?",
+            placeHolder: "State if your website will include user account functionality",
             inputType: "textarea"
         },
         "ar": {
             label: "What is your ideal launch date for the website?",
-            placeHolder: "Date: ",
+            placeHolder: "Provide your preferred launch date (e.g., June 2024)",
             inputType: "textarea",
             required: true
         },
         "as": {
             label: "Are there any deadlines the website must meet?",
-            placeHolder: "Preference: ",
+            placeHolder: "Mention any specific deadlines or timelines",
             inputType: "textarea"
         },
         "at": {
             label: "What is your budget range for this project?",
-            placeHolder: "Budget?: ",
+            placeHolder: "Please provide your budget range for this project",
             required: true
         },
         "au": {
             label: "What is your Email?",
-            placeHolder: "Please enter an email we can respond to: ",
+            placeHolder: "Enter your preferred contact email",
             required: true
         }
-    })
+    });
 
     const [formErrors, formErrorsSet] = useState<Partial<{
         [key in clientSpecificationKeys]: string
@@ -161,26 +161,31 @@ export default function Page() {
     const [currentPageIndex, currentPageIndexSet] = useState(0)
     const [pages,] = useState<pagesType>({
         0: {
-            title: "Business Overview",
-            questions: ["aa", "au", "ab", "ac", "ad", "ae"],
+            questions: []
         },
         1: {
+            title: "Business Overview",
+            questions: ["ab", "ac", "ad", "ae"],
+        },
+        2: {
             title: "Project Scope & Goals",
             questions: ["af", "ag", "ah", "ai"],
         },
-        2: {
+        3: {
             title: "Design Preferences",
             questions: ["aj", "ak", "al", "am"],
         },
-        3: {
+        4: {
             title: "Content & Functionality",
             questions: ["an", "ao", "ap", "aq"],
         },
-        4: {
+        5: {
             title: "Timeline & Budget",
             questions: ["ar", "as", "at"],
         }
     })
+
+    const formContRef = useRef<HTMLDivElement | null>(null)
 
     function checkIfValid(seenFormObj: specificationsObjType, seenName: keyof specificationsObjType, schema: any) {
         const testSchema = schema.pick({ [seenName]: true }).safeParse(seenFormObj);
@@ -290,42 +295,84 @@ export default function Page() {
             })
 
             toast.success("Sent!")
-            // specificationsObjSet({ ...initialSpecificationsObj })
+            specificationsObjSet({ ...initialSpecificationsObj })
 
         } catch (error) {
             toast.error("Couldn't send")
-            console.log(`$seomething else happened`, error);
+            console.log(`Couldn't send`, error);
         }
+    }
+
+    function filterQuestions(questions: clientSpecificationKeys[]) {
+        const requiredQuestions: clientSpecificationKeys[] = []
+        const optionalQuestions: clientSpecificationKeys[] = []
+
+        questions.filter(eachId => {
+            if (moreFormInfo[eachId].required) {
+                requiredQuestions.push(eachId)
+            } else {
+                optionalQuestions.push(eachId)
+            }
+        })
+
+        return (
+            <>
+                {/* required inputs */}
+                {requiredQuestions.length > 0 && (
+                    <div className={`${styles.formPage} ${styles.requiredInputsCont}`}>
+                        {requiredQuestions.map((eachId, eachIdIndex) => {
+                            return (
+                                <React.Fragment key={eachIdIndex}>{returnInput(eachId)}</React.Fragment>
+                            )
+                        })}
+                    </div>
+                )}
+
+                {/* optional inputs */}
+                {optionalQuestions.map((eachId, eachIdIndex) => {
+                    return (
+                        <React.Fragment key={eachIdIndex}>{returnInput(eachId)}</React.Fragment>
+                    )
+                })}
+            </>
+        )
+    }
+
+    function scrollToForm() {
+        if (formContRef.current === null) return
+
+        const offset = formContRef.current.offsetTop
+        window.scrollTo({ top: offset })
     }
 
     return (
         <main className={styles.main}>
-            <div className={styles.formCont}>
+            <div ref={formContRef} className={styles.formCont}>
                 {/* form navigation buttons */}
-                <div style={{ borderBottom: "1px solid #000", borderLeft: "1px solid #000", display: "flex", width: "min-content", justifySelf: "center" }}>
+                <div className='noScrollBar' style={{ display: "flex", overflowX: "auto", gap: "1rem" }}>
                     {Object.entries(pages).map(([key, value], pageButtonIndex) => {
                         return (
-                            <button key={key} className={styles.formPageButton} style={{ backgroundColor: pageButtonIndex === currentPageIndex ? "blue" : "", color: pageButtonIndex === currentPageIndex ? "#fff" : "" }}
+                            <button key={key} className={styles.formPageButton} style={{ backgroundColor: "", color: pageButtonIndex === currentPageIndex ? "#fff" : "#aaa", width: "8rem", paddingBlock: ".5rem", flexShrink: 0 }}
                                 onClick={() => {
                                     currentPageIndexSet(pageButtonIndex)
                                 }}
-                            >{pageButtonIndex + 1}</button>
+                            >{pageButtonIndex === 0 ? (
+                                <span style={{ rotate: "90deg" }} className="material-symbols-outlined">
+                                    drag_indicator
+                                </span>
+                            ) : (
+                                <div style={{ position: "relative" }}>
+                                    <div style={{ width: ".5rem", height: ".5rem", backgroundColor: "var(--primaryColor)", borderRadius: "50%", display: pageButtonIndex !== currentPageIndex ? "none" : "", position: "absolute", top: "50%", left: "50%", translate: "-300% -50%" }}></div>
+
+                                    {pageButtonIndex}
+                                </div>
+                            )}</button>
                         )
                     })}
                 </div>
 
                 <form className={styles.form} action={(e) => { handleSubmit() }}>
                     {Object.entries(pages).map(([key, value], eachPageIndex) => {
-                        const requiredQuestions: clientSpecificationKeys[] = []
-                        const optionalQuestions: clientSpecificationKeys[] = []
-
-                        value.questions.filter(eachId => {
-                            if (moreFormInfo[eachId].required) {
-                                requiredQuestions.push(eachId)
-                            } else {
-                                optionalQuestions.push(eachId)
-                            }
-                        })
 
                         return (
                             <div key={key} className={styles.formPage} style={{ display: eachPageIndex !== currentPageIndex ? "none" : "" }}>
@@ -333,34 +380,76 @@ export default function Page() {
                                     <h2>{value.title}</h2>
                                 )}
 
-                                {/* required inputs */}
-                                {requiredQuestions.length > 0 && (
-                                    <div className={`${styles.formPage} ${styles.requiredInputsCont}`}>
-                                        {requiredQuestions.map((eachId, eachIdIndex) => {
-                                            return (
-                                                <React.Fragment key={eachIdIndex}>{returnInput(eachId)}</React.Fragment>
-                                            )
-                                        })}
+                                {key === "0" && (
+                                    <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", alignItems: "center", gap: "1rem" }}>
+                                        <div style={{ flex: "1 1 400px", position: "relative", height: "300px" }}>
+                                            <Image alt='formArtDesign' src={require(`@/public/cyberLady.png`).default.src} fill={true} style={{ objectFit: "cover" }} sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw' />
+                                        </div>
+
+                                        <div style={{ flex: "1 1 400px", display: "grid", gap: "1rem" }}>
+                                            <div style={{ textAlign: "center" }}>
+                                                <h2>Enter your Specifications</h2>
+                                                <p style={{ color: "", fontSize: "var(--smallFontSize)" }}>Required Inputs are outlined by a golden line</p>
+                                            </div>
+
+                                            {filterQuestions(["aa", "au"])}
+
+                                            <button style={{ justifySelf: "center" }} className='secondaryButton'
+                                                onClick={() => {
+                                                    currentPageIndexSet(prev => prev + 1)
+                                                }}
+                                            >Get Started</button>
+                                        </div>
                                     </div>
                                 )}
 
-                                {/* optional inputs */}
-                                {optionalQuestions.map((eachId, eachIdIndex) => {
-                                    return (
-                                        <React.Fragment key={eachIdIndex}>{returnInput(eachId)}</React.Fragment>
-                                    )
-                                })}
-
-                                {currentPageIndex === Object.entries(pages).length - 1 && (
-                                    <button
-                                        onClick={() => {
-                                            handleSubmit(true)
-                                        }}
-                                    >Submit</button>
-                                )}
+                                {filterQuestions(value.questions)}
                             </div>
                         )
                     })}
+
+                    {/* submit button */}
+                    {currentPageIndex !== 0 && (
+                        <div style={{ display: "flex", justifyContent: "center", gap: ".5rem" }}>
+                            <button className='secondaryButton'
+                                onClick={() => {
+                                    scrollToForm()
+
+                                    currentPageIndexSet(prev => {
+                                        let newIndex = prev - 1
+
+                                        if (newIndex < 0) {
+                                            newIndex = Object.entries(pages).length - 1
+                                        }
+
+                                        return newIndex
+                                    })
+                                }}
+                            >prev</button>
+
+                            <button className='mainButton' disabled={!specificationsFormSchema.safeParse(specificationsObj).success} style={{ justifySelf: "center", paddingInline: "4rem" }}
+                                onClick={() => {
+                                    handleSubmit(true)
+                                }}
+                            >Submit</button>
+
+                            <button className='secondaryButton'
+                                onClick={() => {
+                                    scrollToForm()
+
+                                    currentPageIndexSet(prev => {
+                                        let newIndex = prev + 1
+
+                                        if (newIndex > Object.entries(pages).length - 1) {
+                                            newIndex = 0
+                                        }
+
+                                        return newIndex
+                                    })
+                                }}
+                            >next</button>
+                        </div>
+                    )}
                 </form>
             </div>
         </main>

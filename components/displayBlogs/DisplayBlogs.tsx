@@ -15,7 +15,7 @@ export default function DisplayBlogs({ passedBlogData = blogData }: { passedBlog
 
                         <div style={{ display: "flex", flexDirection: "column", gap: "1rem", padding: "1rem", height: "100%" }}>
                             <div style={{ display: "flex", flexWrap: "wrap", gap: "2rem", fontSize: "var(--smallFontSize)", color: "var(--fadedTextColor)" }}>
-                                <p>Anthurium</p>
+                                <p>SquareMax</p>
 
                                 <p>{eachBlog.datePosted.toLocaleDateString('en-US', {
                                     month: 'long',

@@ -23,7 +23,7 @@ export default function AboutUs() {
                     {[
                         {
                             title: "Professional IT Services",
-                            summary: 'With a team of seasoned professionals, AnthSolutions is dedicated to delivering professional IT services that exceed expectations.',
+                            summary: 'With a team of seasoned professionals, SquareMax is dedicated to delivering professional IT services that exceed expectations.',
                             icon: <span style={{ fontSize: "var(--largeIconSize)" }} className="material-symbols-outlined">memory</span>
                         },
                         {
@@ -43,7 +43,7 @@ export default function AboutUs() {
                         },
                         {
                             title: "Partnering for Success",
-                            summary: "At AnthSolutions, we believe in the power of partnerships. We view our clients as collaborators, working hand in hand to achieve trust, and collaboration",
+                            summary: "At SquareMax, we believe in the power of partnerships. We view our clients as collaborators, working hand in hand to achieve trust, and collaboration",
                             icon: <span style={{ fontSize: "var(--largeIconSize)" }} className="material-symbols-outlined">cheer</span>
                         },
                     ].map((eachItem, eachItemIndex) => {

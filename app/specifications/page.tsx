@@ -411,7 +411,7 @@ export default function Page() {
                     })}
                 </div>
 
-                <form className={styles.form} action={(e) => { handleSubmit() }}>
+                <form className={styles.form} action={() => { handleSubmit() }}>
                     {Object.entries(pages).map(([key, value], eachPageIndex) => {
 
                         return (

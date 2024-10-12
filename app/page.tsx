@@ -1656,7 +1656,7 @@ export default function Home() {
           </div>
 
           <div style={{ flex: "2 1 300px", display: "grid", alignContent: "flex-start", gap: "1rem" }}>
-            <h1>Reasons To <span className='highlight'>Choose</span> AnthSolutions</h1>
+            <h1>Reasons To <span className='highlight'>Choose</span> SquareMax</h1>
 
             <p>We make your life easier, streamline the development process and build excellent web applications.</p>
 

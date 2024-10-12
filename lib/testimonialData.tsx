@@ -9,7 +9,7 @@ export type testimonialDataType = {
 export const testimonialData: testimonialDataType[] = [
     {
         image: require(`@/public/testimonials/thesoucebpslogo.svg`).default.src,
-        testimonial: "Anthurium exceeded our expectations in every way. The website perfectly suited our business' needs.",
+        testimonial: "SquareMax exceeded our expectations in every way. The website perfectly suited our business' needs.",
         rating: 5,
         name: "Romario",
         title: "CEO, TheSourceBPS"

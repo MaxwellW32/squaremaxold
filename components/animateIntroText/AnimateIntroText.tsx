@@ -16,8 +16,8 @@ export default function AnimateIntroText() {
         },
     ])
 
-    const headingContainerRef = useRef<HTMLHeadingElement>(null)
-    const supportingTextContainerRef = useRef<HTMLHeadingElement>(null)
+    const headingContainerRef = useRef<HTMLHeadingElement | null>(null)
+    const supportingTextContainerRef = useRef<HTMLHeadingElement | null>(null)
     const [started, startedSet] = useState(false)
 
     //start things off
@@ -34,9 +34,9 @@ export default function AnimateIntroText() {
     }, [])
 
     async function startAnimation() {
-        if (!headingContainerRef.current || !supportingTextContainerRef.current) return
-
         for (let index = 0; index < textLines.current.length; index++) {
+            if (headingContainerRef.current === null || supportingTextContainerRef.current === null) return
+
             //clear all
             headingContainerRef.current.innerHTML = ""
             supportingTextContainerRef.current.innerHTML = ""
@@ -52,7 +52,6 @@ export default function AnimateIntroText() {
             }
 
             if (eachObj.supportingText) {
-
                 //adds each word as a span to the container
                 const supportingTextArray = eachObj.supportingText.split(" ")
                 for (let smallIndex = 0; smallIndex < supportingTextArray.length; smallIndex++) {

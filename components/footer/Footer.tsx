@@ -73,7 +73,7 @@ export default function Footer() {
             </ul>
 
             <div style={{ padding: "1rem", borderTop: "1px solid var(--fadedWhite2)", display: "flex", justifyContent: "center", gap: "1rem" }}>
-                <p>Copyright © Anthurium all rights reserved.</p>
+                <p>Copyright © SquareMax all rights reserved.</p>
 
                 {/* <ul style={{ display: "flex", flexWrap: 'wrap', gap: "1rem" }}>
                     {[{

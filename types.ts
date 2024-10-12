@@ -44,6 +44,7 @@ export type pagesType = {
         title?: string,
         questions: clientSpecificationKeys[],
         extraInfo?: JSX.Element,
+        hideQuestions?: boolean
     }
 }
 

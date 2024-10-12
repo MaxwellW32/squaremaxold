@@ -43,7 +43,7 @@ export async function sendNodeEmail(input: {
 
                 return (
                     `
-                    ${value.title} \n
+                    ${value.title !== undefined ? value.title : ""} \n
 
                     ${value.questions.map(eachQuestionId => {
                         if (input.moreFormInfo === undefined || input.specificationsObj === undefined) return ""

@@ -161,7 +161,8 @@ export default function Page() {
     const [currentPageIndex, currentPageIndexSet] = useState(0)
     const [pages,] = useState<pagesType>({
         0: {
-            questions: []
+            questions: ["aa", "au"],
+            hideQuestions: true
         },
         1: {
             title: "Business Overview",
@@ -392,7 +393,7 @@ export default function Page() {
                                                 <p style={{ color: "", fontSize: "var(--smallFontSize)" }}>Required Inputs are outlined by a golden line</p>
                                             </div>
 
-                                            {filterQuestions(["aa", "au"])}
+                                            {filterQuestions(value.questions)}
 
                                             <button style={{ justifySelf: "center" }} className='secondaryButton'
                                                 onClick={() => {
@@ -403,7 +404,7 @@ export default function Page() {
                                     </div>
                                 )}
 
-                                {filterQuestions(value.questions)}
+                                {value.hideQuestions !== true && filterQuestions(value.questions)}
                             </div>
                         )
                     })}

@@ -94,7 +94,13 @@ export default function ContactForm() {
                 sendTo: "squaremaxtech@gmail.com",
                 replyTo: formObj.email,
                 subject: `Customer Contact from ${formObj.name}`,
-                message: formObj.message
+                text: `
+                name: ${formObj.name}
+                company: ${formObj.company}
+
+                message: 
+                ${formObj.message}
+                `
             })
 
             toast.success("Sent!")

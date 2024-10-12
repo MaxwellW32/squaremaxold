@@ -22,11 +22,7 @@ export async function sendNodeEmail(input: {
     sendTo: string,
     replyTo: string,
     subject: string,
-    message?: string,
-
-    specificationsObj?: specificationsObjType,
-    moreFormInfo?: moreFormInfoType,
-    pages?: pagesType,
+    text: string,
 }) {
     // const basePath = process.cwd()
     // const locationToTempaltes = path.join(basePath, "templates", "simple.html")
@@ -37,29 +33,7 @@ export async function sendNodeEmail(input: {
         from: email,
         to: input.sendTo,
         subject: input.subject,
-        text: input.pages !== undefined ? (
-            `
-            ${Object.entries(input.pages).map(([key, value]) => {
-
-                return (
-                    `
-                    ${value.title !== undefined ? value.title : ""} \n
-
-                    ${value.questions.map(eachQuestionId => {
-                        if (input.moreFormInfo === undefined || input.specificationsObj === undefined) return ""
-
-                        return (
-                            `
-                            ${input.moreFormInfo[eachQuestionId].label}
-                            ${input.specificationsObj[eachQuestionId]} \n\n
-                        `
-                        )
-                    })}\n
-                `
-                )
-            })}
-        `
-        ) : input.message,
+        text: input.text,
         // html: template({
         //     root: (
         //         `

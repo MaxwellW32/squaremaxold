@@ -311,9 +311,27 @@ export default function Page() {
                 sendTo: "squaremaxtech@gmail.com",
                 replyTo: specificationsObj["au"],
                 subject: `Customer Specifications for ${specificationsObj["aa"]}`,
-                specificationsObj: specificationsObj,
-                moreFormInfo: moreFormInfo,
-                pages: pages,
+                text: (
+                    `
+                    ${Object.entries(pages).map(([key, value]) => {
+
+                        return (
+                            `
+                            ${value.title !== undefined ? value.title : ""} \n
+        
+                            ${value.questions.map(eachQuestionId => {
+                                return (
+                                    `
+                                    ${moreFormInfo[eachQuestionId].label}
+                                    ${specificationsObj[eachQuestionId]} \n\n
+                                `
+                                )
+                            })}\n
+                        `
+                        )
+                    })}
+                `
+                )
             })
 
             toast.success("Sent!")

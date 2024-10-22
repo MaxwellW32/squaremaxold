@@ -10,12 +10,12 @@ import Script from "next/script";
 const rubik = Rubik({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://squaremaxdev.vercel.app'),
-  title: "SquareMax - Expert Web Development & Mobile App Solutions | Next JS & React Native Specialists",
-  description: "SquareMax is a leading web development agency specializing in high-performance Next JS websites and seamless React Native mobile app solutions. Our expert team delivers tailored digital experiences, from custom e-commerce platforms to robust software solutions. Contact us to elevate your online presence",
+  metadataBase: new URL('https://squaremaxold.vercel.app'),
+  title: "SquareMaxOld - Expert Web Development & Mobile App Solutions | Next JS & React Native Specialists",
+  description: "SquareMaxOld is a leading web development agency specializing in high-performance Next JS websites and seamless React Native mobile app solutions. Our expert team delivers tailored digital experiences, from custom e-commerce platforms to robust software solutions. Contact us to elevate your online presence",
   openGraph: {
-    title: "SquareMax - Expert Web Development & Mobile App Solutions",
-    description: "SquareMax is a leading web development agency specializing in high-performance Next JS websites and seamless React Native mobile app solutions."
+    title: "SquareMaxOld - Expert Web Development & Mobile App Solutions",
+    description: "SquareMaxOld is a leading web development agency specializing in high-performance Next JS websites and seamless React Native mobile app solutions."
   }
 };
 

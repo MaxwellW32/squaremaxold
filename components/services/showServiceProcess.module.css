@@ -13,7 +13,7 @@
     padding: 1rem;
     position: relative;
     color: #fff;
-    background: linear-gradient(to right, var(--primaryColor), var(--tertiaryColor));
+    background: linear-gradient(to right, var(--color1), var(--color3));
     padding-left: 2rem;
     transition: transform 400ms;
 }
@@ -27,7 +27,7 @@
     translate: -10%;
     flex-direction: row;
     justify-self: flex-start;
-    background: linear-gradient(to left, var(--primaryColor), var(--tertiaryColor));
+    background: linear-gradient(to left, var(--color1), var(--color3));
     padding: 1rem;
     padding-right: 2rem;
 }

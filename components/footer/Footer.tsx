@@ -10,7 +10,7 @@ import { servicesData } from '@/lib/servicesData'
 
 export default function Footer() {
     return (
-        <footer id='footerNav' style={{ padding: "2rem 1rem", backgroundColor: "var(--backgroundColor)", color: "#fff", display: "grid", gap: "1rem" }}>
+        <footer id='footerNav' style={{ padding: "2rem 1rem", backgroundColor: "var(--bg1)", color: "#fff", display: "grid", gap: "1rem" }}>
             <ul className={styles.footerUL}>
                 {[
                     {
@@ -72,7 +72,7 @@ export default function Footer() {
                 })}
             </ul>
 
-            <div style={{ padding: "1rem", borderTop: "1px solid var(--fadedWhite2)", display: "flex", justifyContent: "center", gap: "1rem" }}>
+            <div style={{ padding: "1rem", borderTop: "1px solid var(--shade2)", display: "flex", justifyContent: "center", gap: "1rem" }}>
                 <p>Copyright © SquareMax all rights reserved.</p>
 
                 {/* <ul style={{ display: "flex", flexWrap: 'wrap', gap: "1rem" }}>

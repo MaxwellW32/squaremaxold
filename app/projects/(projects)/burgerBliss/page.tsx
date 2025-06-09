@@ -88,7 +88,7 @@ export default function Page() {
                         <div style={{ display: "grid" }}>
                             <h1 style={{ color: "#000" }}>BLISSFUL</h1>
                             <h1 style={{ color: "#000" }}>CLASSIC</h1>
-                            <p style={{ color: "var(--color1)", fontSize: "var(--largeFontSize)", fontWeight: "500", position: 'relative', top: "-.6em" }}>Burger</p>
+                            <p style={{ color: "var(--color1)", fontSize: "var(--fontSizeL)", fontWeight: "500", position: 'relative', top: "-.6em" }}>Burger</p>
                         </div>
 
                         <p style={{ fontWeight: "500", textTransform: "uppercase" }}>A FAN FAVORITE</p>
@@ -104,7 +104,7 @@ export default function Page() {
                         <Image alt="food" src={require(`@/public/projects/projectThree/food3.png`).default.src} fill={true} sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} />
                     </div>
 
-                    <div style={{ flex: "1 1 350px", display: "grid", gap: "1rem", padding: "4rem 2rem", backgroundColor: "var(--backgroundColor)", textAlign: "center", justifyItems: "center" }}>
+                    <div style={{ flex: "1 1 350px", display: "grid", gap: "1rem", padding: "4rem 2rem", backgroundColor: "var(--bg1)", textAlign: "center", justifyItems: "center" }}>
                         <h3 style={{ justifySelf: "stretch", "--lineColor": "#fff" } as React.CSSProperties} className={styles.linedText}>DECADENT</h3>
 
                         <div style={{ display: "grid" }}>

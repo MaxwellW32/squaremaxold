@@ -6,7 +6,7 @@ export default function SpecificationsTextAreaInput({ name, value, onInput, labe
 
             <textarea rows={rows !== undefined ? rows : 5} id={id !== undefined ? id : name} name={name} value={value} placeholder={placeHolder ?? ""} onInput={onInput} onBlur={(e) => { if (onBlur !== undefined) onBlur(e) }} ></textarea>
 
-            {errors !== undefined && <p style={{ color: errorColor, fontSize: "var(--smallFontSize)" }}>{errors}</p>}
+            {errors !== undefined && <p style={{ color: errorColor, fontSize: "var(--fontSizeS)" }}>{errors}</p>}
         </div>
     )
 }

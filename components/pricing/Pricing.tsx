@@ -35,9 +35,9 @@ export default function Pricing() {
                             return (
                                 <li key={eachIndex} style={{ display: "flex", alignItems: "center", gap: ".5rem" }}>
                                     <div style={{ width: "fit-content", aspectRatio: "1/1", display: "grid", alignItems: "center", justifyItems: "center", position: "relative" }}>
-                                        <div style={{ backgroundColor: "var(--primaryColor)", position: "absolute", top: 0, left: 0, bottom: 0, right: 0, zIndex: -1, borderRadius: "50%", opacity: .05, scale: 1.2 }}></div>
+                                        <div style={{ backgroundColor: "var(--color1)", position: "absolute", top: 0, left: 0, bottom: 0, right: 0, zIndex: -1, borderRadius: "50%", opacity: .05, scale: 1.2 }}></div>
 
-                                        <span className="material-symbols-outlined" style={{ color: "var(--primaryColor)", fontSize: "var(--smallIconSize)" }}>check</span>
+                                        <span className="material-symbols-outlined" style={{ color: "var(--color1)", fontSize: "var(--iconSizeS)" }}>check</span>
                                     </div>
 
                                     {each.name}
@@ -49,10 +49,10 @@ export default function Pricing() {
 
                 <button onClick={() => { viewingMoreSet(prev => !prev) }}>
                     {viewingMore ? (
-                        <span style={{ fontSize: "var(--largeIconSize)" }} className="material-symbols-outlined closeButton">
+                        <span style={{ fontSize: "var(--iconSizeL)" }} className="material-symbols-outlined closeButton">
                             close
                         </span>
-                    ) : <p className={"hoverUnderline"} style={{ color: "var(--tertiaryColor)" }}>Show Details</p>}
+                    ) : <p className={"hoverUnderline"} style={{ color: "var(--color3)" }}>Show Details</p>}
                 </button>
 
                 {viewingMore && (
@@ -92,7 +92,7 @@ export default function Pricing() {
                                     <li key={eachIndex}>
                                         {each.rule}
 
-                                        {each.price === 0 ? <p style={{ fontWeight: "var(--mediumFontWeight)", textTransform: "uppercase", color: "var(--tertiaryColor)" }}>free</p> : (
+                                        {each.price === 0 ? <p style={{ fontWeight: "var(--fontWeightM)", textTransform: "uppercase", color: "var(--color3)" }}>free</p> : (
                                             <p className={styles.price}>
                                                 <span style={{ alignSelf: "flex-start" }} className="material-symbols-outlined">
                                                     attach_money
@@ -153,7 +153,7 @@ export default function Pricing() {
                         </ul>
 
                         <h3 className='supportingTitle2'>Independent Hosting Support</h3>
-                        <p><span style={{ color: "var(--tertiaryColor)", fontWeight: "var(--mediumFontWeight)" }}>Free assistance </span>when setting up your own hosting solution.</p>
+                        <p><span style={{ color: "var(--color3)", fontWeight: "var(--fontWeightM)" }}>Free assistance </span>when setting up your own hosting solution.</p>
 
                         <h3 className='supportingTitle2'>Brand Creation</h3>
                         <ul className={styles.ruleCont}>
@@ -198,22 +198,22 @@ function DisplayPricingTable({ pricingTable, startHovering, recommended, scrollT
 
     return (
         <div ref={pricingTableRef} className={`${styles.pricingTable} ${hovering && styles.pricingTableHovering}`} style={{}} onMouseEnter={() => { hoveringSet(true) }} onMouseLeave={() => { hoveringSet(false) }}>
-            <div className={styles.gradient} style={{ position: "absolute", top: 0, left: 0, bottom: 0, right: 0, backgroundImage: "linear-gradient(to bottom left, var(--primaryColor), transparent,transparent,transparent, var(--primaryColor))", transformOrigin: "top", translate: "0 -1rem", filter: "blur(5px)", scale: 1.3 }}></div>
+            <div className={styles.gradient} style={{ position: "absolute", top: 0, left: 0, bottom: 0, right: 0, backgroundImage: "linear-gradient(to bottom left, var(--color1), transparent,transparent,transparent, var(--color1))", transformOrigin: "top", translate: "0 -1rem", filter: "blur(5px)", scale: 1.3 }}></div>
 
-            <p style={{ textTransform: "capitalize", fontSize: "var(--mediumFontSize)", fontWeight: "var(--mediumeFontWeight)" }}>{pricingTable.planName}</p>
+            <p style={{ textTransform: "capitalize", fontSize: "var(--fontSizeM)", fontWeight: "var(--fontWeightM)" }}>{pricingTable.planName}</p>
 
             {recommended && (
-                <p style={{ position: "absolute", top: 0, right: 0, margin: "1rem", backgroundColor: "var(--primaryColor)", color: "#fff", padding: ".5rem", fontSize: "var(--smallFontSize)", borderRadius: "1rem", fontWeight: "bold" }}>Bestseller</p>
+                <p style={{ position: "absolute", top: 0, right: 0, margin: "1rem", backgroundColor: "var(--color1)", color: "#fff", padding: ".5rem", fontSize: "var(--fontSizeS)", borderRadius: "1rem", fontWeight: "bold" }}>Bestseller</p>
             )}
 
             <p style={{ minHeight: "120px" }}>{pricingTable.shortDescription}</p>
 
-            <div style={{ display: "flex", fontSize: "var(--largerFontSize)", alignItems: "center" }}>
+            <div style={{ display: "flex", fontSize: "var(--fontSizeEL)", alignItems: "center" }}>
                 {pricingTable.pricing >= 1000 && (
-                    <p style={{ fontSize: "var(--smallFontSize)" }}>From</p>
+                    <p style={{ fontSize: "var(--fontSizeS)" }}>From</p>
                 )}
 
-                <span style={{ fontSize: "var(--largeIconSize)" }} className="material-symbols-outlined">
+                <span style={{ fontSize: "var(--iconSizeL)" }} className="material-symbols-outlined">
                     attach_money
                 </span>
 
@@ -230,9 +230,9 @@ function DisplayPricingTable({ pricingTable, startHovering, recommended, scrollT
                     return (
                         <li key={eachFeatureIndex} style={{ display: "flex", gap: ".3rem", textTransform: "capitalize" }}>
                             <div style={{ position: "relative", aspectRatio: "1/1", }}>
-                                <div style={{ aspectRatio: "1/1", backgroundColor: "var(--primaryColor)", position: "absolute", top: 0, left: 0, bottom: 0, right: 0, zIndex: -1, borderRadius: "50%", opacity: .05, scale: 1.2 }}></div>
+                                <div style={{ aspectRatio: "1/1", backgroundColor: "var(--color1)", position: "absolute", top: 0, left: 0, bottom: 0, right: 0, zIndex: -1, borderRadius: "50%", opacity: .05, scale: 1.2 }}></div>
 
-                                <span className="material-symbols-outlined" style={{ color: "var(--primaryColor)" }}>check</span>
+                                <span className="material-symbols-outlined" style={{ color: "var(--color1)" }}>check</span>
                             </div>
 
                             <p>{tableContainsFeature.modifier} {eachFeature.content}</p>

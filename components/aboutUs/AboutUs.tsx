@@ -24,32 +24,32 @@ export default function AboutUs() {
                         {
                             title: "Professional IT Services",
                             summary: 'With a team of seasoned professionals, SquareMax is dedicated to delivering professional IT services that exceed expectations.',
-                            icon: <span style={{ fontSize: "var(--largeIconSize)" }} className="material-symbols-outlined">memory</span>
+                            icon: <span style={{ fontSize: "var(--iconSizeL)" }} className="material-symbols-outlined">memory</span>
                         },
                         {
                             title: "Elevating User Experience",
                             summary: 'User experience is paramount to us. Our experts are committed to crafting immersive and intuitive digital experiences that captivate audiences and drive engagement.',
-                            icon: <span style={{ fontSize: "var(--largeIconSize)" }} className="material-symbols-outlined">settings_accessibility</span>
+                            icon: <span style={{ fontSize: "var(--iconSizeL)" }} className="material-symbols-outlined">settings_accessibility</span>
                         },
                         {
                             title: "Unrivaled Support",
                             summary: 'Customer satisfaction is our top priority.We offer swift and responsive support whenever and wherever you need it.',
-                            icon: <span style={{ fontSize: "var(--largeIconSize)" }} className="material-symbols-outlined">headset_mic</span>
+                            icon: <span style={{ fontSize: "var(--iconSizeL)" }} className="material-symbols-outlined">headset_mic</span>
                         },
                         {
                             title: "Innovation at the Forefront",
                             summary: "We constantly push the boundaries of technology and creativity to deliver cutting-edge solutions that are future-proof. We're committed to driving innovation in everything we do.",
-                            icon: <span style={{ fontSize: "var(--largeIconSize)" }} className="material-symbols-outlined">emoji_objects</span>
+                            icon: <span style={{ fontSize: "var(--iconSizeL)" }} className="material-symbols-outlined">emoji_objects</span>
                         },
                         {
                             title: "Partnering for Success",
                             summary: "At SquareMax, we believe in the power of partnerships. We view our clients as collaborators, working hand in hand to achieve trust, and collaboration",
-                            icon: <span style={{ fontSize: "var(--largeIconSize)" }} className="material-symbols-outlined">cheer</span>
+                            icon: <span style={{ fontSize: "var(--iconSizeL)" }} className="material-symbols-outlined">cheer</span>
                         },
                     ].map((eachItem, eachItemIndex) => {
                         return (
                             <div key={eachItemIndex} style={{ display: "flex", gap: "1rem" }}>
-                                <div style={{ color: "var(--primaryColor)" }}>
+                                <div style={{ color: "var(--color1)" }}>
                                     {eachItem.icon}
                                 </div>
 

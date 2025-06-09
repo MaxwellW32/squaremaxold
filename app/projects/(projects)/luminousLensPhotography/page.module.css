@@ -1,9 +1,9 @@
 .main {
     --extraLargeFontSize: 35px;
-    --largeFontSize: 2rem;
-    --mediumFontSize: 20px;
-    --regularFontSize: 1rem;
-    --smallFontSize: .7rem;
+    --fontSizeL: 2rem;
+    --fontSizeM: 20px;
+    --fontSizeR: 1rem;
+    --fontSizeS: .7rem;
     --extraSmallFontSize: 8px;
 
     --mediumIconSize: 2rem;
@@ -11,13 +11,13 @@
     --color1: #9c5451;
     --color2: #181414;
     --color3: #181414;
-    --backgroundColor: #181414;
+    --bg1: #181414;
     --gray1: #ddd;
     --gray2: hsl(0, 7%, 17%);
 
 
     /* styling */
-    background-color: var(--backgroundColor);
+    background-color: var(--bg1);
     font-family: var(--JosefinSans);
     position: relative;
     color: #fff;
@@ -32,7 +32,7 @@
 .main h2 {
     color: var(--color1);
     text-transform: capitalize;
-    font-size: var(--regularFontSize);
+    font-size: var(--fontSizeR);
     font-weight: normal;
 }
 
@@ -72,7 +72,7 @@
     transition: color 200ms;
     font-family: var(--JosefinSans);
     font-weight: 300;
-    font-size: var(--smallFontSize);
+    font-size: var(--fontSizeS);
     text-transform: capitalize;
 }
 

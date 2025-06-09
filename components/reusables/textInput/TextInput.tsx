@@ -10,7 +10,7 @@ export default function TextInput({
 
             <input id={id !== undefined ? id : name} type='text' name={name} value={value} placeholder={placeHolder ?? ""} onChange={onChange} onBlur={(e) => { if (onBlur !== undefined) onBlur(e) }} />
 
-            {errors !== undefined && <p style={{ color: "red", fontSize: "var(--smallFontSize)" }}>{errors}</p>}
+            {errors !== undefined && <p style={{ color: "red", fontSize: "var(--fontSizeS)" }}>{errors}</p>}
         </div>
     )
 }

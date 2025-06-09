@@ -1,5 +1,5 @@
 .button {
-    border: 2px solid var(--faded3);
+    border: 2px solid var(--shade3);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,5 +14,5 @@
 .buttonHovering {
     color: #fff;
     border: 2px solid transparent;
-    background-color: var(--primaryColor);
+    background-color: var(--color1);
 }

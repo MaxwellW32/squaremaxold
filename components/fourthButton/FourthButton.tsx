@@ -8,7 +8,7 @@ export default function FourthButton({ text, link, hovering }: { text: string, l
             <button className={`${styles.button} ${hovering && styles.buttonHovering}`} >
                 {text}
 
-                <span style={{ fontSize: "var(--smallIconSize)" }} className="material-symbols-outlined">
+                <span style={{ fontSize: "var(--iconSizeS)" }} className="material-symbols-outlined">
                     arrow_forward
                 </span>
             </button>

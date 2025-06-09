@@ -58,8 +58,8 @@
 
 .mainMenuItem:hover>div>a,
 .mainMenuItem:hover>div>svg {
-    color: var(--primaryColor);
-    fill: var(--primaryColor);
+    color: var(--color1);
+    fill: var(--color1);
 }
 
 .subMenu {
@@ -81,8 +81,8 @@
 
 .subMenuItem:hover>div>a,
 .subMenuItem:hover>div>svg {
-    color: var(--primaryColor);
-    fill: var(--primaryColor);
+    color: var(--color1);
+    fill: var(--color1);
 }
 
 .subSubMenu {
@@ -101,8 +101,8 @@
 
 .subSubMenuItem:hover>a,
 .subSubMenuItem:hover>svg {
-    color: var(--primaryColor);
-    fill: var(--primaryColor);
+    color: var(--color1);
+    fill: var(--color1);
 }
 
 

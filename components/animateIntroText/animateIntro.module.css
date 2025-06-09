@@ -8,7 +8,7 @@
 }
 
 .highlight {
-    background-color: var(--primaryColor);
+    background-color: var(--color1);
     color: #fff;
 }
 
@@ -25,6 +25,6 @@
 
 @media only screen and (max-width: 400px) {
     .main h1 {
-        font-size: var(--mediumFontSize);
+        font-size: var(--fontSizeM);
     }
 }

@@ -89,7 +89,7 @@
     .mobileNav {
         display: grid;
         position: relative;
-        background-color: var(--backgroundColor);
+        background-color: var(--bg1);
 
 
     }
@@ -102,7 +102,7 @@
         width: 100%;
         max-height: 80vh;
         overflow-y: auto;
-        background-color: var(--backgroundColor);
+        background-color: var(--bg1);
         padding: 1rem;
     }
 

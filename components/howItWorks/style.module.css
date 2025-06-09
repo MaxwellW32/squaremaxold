@@ -6,7 +6,7 @@
 }
 
 .mainCard:hover .outline {
-    border: 3px solid var(--primaryColor)
+    border: 3px solid var(--color1)
 }
 
 .circleCont {

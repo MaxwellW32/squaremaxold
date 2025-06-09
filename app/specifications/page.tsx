@@ -402,7 +402,7 @@ export default function Page() {
                                 </span>
                             ) : (
                                 <div style={{ position: "relative" }}>
-                                    <div style={{ width: ".5rem", height: ".5rem", backgroundColor: "var(--primaryColor)", borderRadius: "50%", display: pageButtonIndex !== currentPageIndex ? "none" : "", position: "absolute", top: "50%", left: "50%", translate: "-300% -50%" }}></div>
+                                    <div style={{ width: ".5rem", height: ".5rem", backgroundColor: "var(--color1)", borderRadius: "50%", display: pageButtonIndex !== currentPageIndex ? "none" : "", position: "absolute", top: "50%", left: "50%", translate: "-300% -50%" }}></div>
 
                                     {pageButtonIndex}
                                 </div>
@@ -429,7 +429,7 @@ export default function Page() {
                                         <div style={{ flex: "1 1 400px", display: "grid", gap: "1rem" }}>
                                             <div style={{ textAlign: "center" }}>
                                                 <h2>Customize Your Website</h2>
-                                                <p style={{ color: "", fontSize: "var(--smallFontSize)" }}>Required Inputs are outlined by a golden line</p>
+                                                <p style={{ color: "", fontSize: "var(--fontSizeS)" }}>Required Inputs are outlined by a golden line</p>
                                             </div>
 
                                             {filterQuestions(value.questions)}

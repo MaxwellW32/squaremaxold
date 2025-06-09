@@ -44,9 +44,9 @@ export default function HowItWorks() {
                                     <div className={styles.outline} style={{ position: "absolute", height: "100%", width: "100%", aspectRatio: "1/1", borderRadius: "50%" }}></div>
 
                                     <div className={styles.circleCont} style={{ position: "absolute", top: "50%", left: 0, width: "30%", aspectRatio: "1/1", }}>
-                                        <div style={{ position: "absolute", top: "50%", left: "50%", translate: "-50% -50%", width: "100%", height: "100%", borderRadius: "50%", backgroundColor: "var(--primaryColor)", opacity: 1 }}></div>
-                                        <div style={{ position: "absolute", top: "50%", left: "50%", translate: "-50% -50%", width: "100%", height: "100%", borderRadius: "50%", backgroundColor: "var(--primaryColor)", opacity: .5, scale: 1.3, }}></div>
-                                        <div style={{ position: "absolute", top: "50%", left: "50%", translate: "-50% -50%", width: "100%", height: "100%", borderRadius: "50%", backgroundColor: "var(--primaryColor)", opacity: .5, scale: 1.7, }}></div>
+                                        <div style={{ position: "absolute", top: "50%", left: "50%", translate: "-50% -50%", width: "100%", height: "100%", borderRadius: "50%", backgroundColor: "var(--color1)", opacity: 1 }}></div>
+                                        <div style={{ position: "absolute", top: "50%", left: "50%", translate: "-50% -50%", width: "100%", height: "100%", borderRadius: "50%", backgroundColor: "var(--color1)", opacity: .5, scale: 1.3, }}></div>
+                                        <div style={{ position: "absolute", top: "50%", left: "50%", translate: "-50% -50%", width: "100%", height: "100%", borderRadius: "50%", backgroundColor: "var(--color1)", opacity: .5, scale: 1.7, }}></div>
                                         <div style={{ position: "absolute", top: "50%", left: "50%", translate: "-50% -50%", width: "100%", height: "100%", display: "grid", alignItems: "center", justifyItems: "center", color: "#fff" }}>{eachItemIndex + 1}</div>
                                     </div>
                                 </div>

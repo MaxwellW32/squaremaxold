@@ -140,7 +140,7 @@ export default function History() {
                 }
 
                 return (
-                    <div key={eachHistoryIndex} ref={addToHistoryChildren} style={{ position: "absolute", top: 0, left: "50%", transform: `translate(${currentOffset - 50}%, 0)`, width: "min(700px, 90vw)", display: currentOffset === -1 ? "none" : "grid", gap: "1rem", zIndex: currentOffset === -1 ? -1 : "", opacity: currentOffset === 0 ? "" : .3, transition: "transform 1s, opacity 1s", animation: `translate both linear`, animationTimeline: `view()`, "--translateFrom": "20% 0", "--translateTo": "-20% 0", fontSize: "var(--smallFontSize)" } as React.CSSProperties}>
+                    <div key={eachHistoryIndex} ref={addToHistoryChildren} style={{ position: "absolute", top: 0, left: "50%", transform: `translate(${currentOffset - 50}%, 0)`, width: "min(700px, 90vw)", display: currentOffset === -1 ? "none" : "grid", gap: "1rem", zIndex: currentOffset === -1 ? -1 : "", opacity: currentOffset === 0 ? "" : .3, transition: "transform 1s, opacity 1s", animation: `translate both linear`, animationTimeline: `view()`, "--translateFrom": "20% 0", "--translateTo": "-20% 0", fontSize: "var(--fontSizeS)" } as React.CSSProperties}>
                         <div style={{ position: "relative", width: "100%", height: "300px" }}>
                             <Image alt='historyImg' src={eachHistory.img} fill={true} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" style={{ objectFit: "cover" }} />
                         </div>
@@ -154,7 +154,7 @@ export default function History() {
                 )
             })}
 
-            <div className={styles.buttonCont} style={{ position: "absolute", top: 0, left: 0, width: "100%", display: "flex", flexWrap: "wrap", justifyContent: "space-between", gap: "1rem", fontFamily: "var(--fakeReceipt)", fontSize: "vaR(--largeFontSize)" }}>
+            <div className={styles.buttonCont} style={{ position: "absolute", top: 0, left: 0, width: "100%", display: "flex", flexWrap: "wrap", justifyContent: "space-between", gap: "1rem", fontFamily: "var(--fakeReceipt)", fontSize: "vaR(--fontSizeL)" }}>
                 <button style={{ cursor: "pointer" }} onClick={() => {
                     currentIndexSet(prev => {
                         return getPrevInBounds(prev)

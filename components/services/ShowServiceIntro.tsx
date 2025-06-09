@@ -5,7 +5,7 @@ import React from 'react'
 export default function ShowServiceIntro({ service, text }: { service: service, text: JSX.Element }) {
     return (
         <div>
-            <section style={{ backgroundColor: "var(--backgroundColor)", color: "#fff" }}>
+            <section style={{ backgroundColor: "var(--bg1)", color: "#fff" }}>
                 <h2 style={{ textAlign: "center", }}>{service.name}</h2>
             </section>
 

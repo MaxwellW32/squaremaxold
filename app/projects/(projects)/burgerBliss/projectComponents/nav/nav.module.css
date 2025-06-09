@@ -1,7 +1,7 @@
 .navAll {
     white-space: nowrap;
     text-transform: uppercase;
-    font-size: var(--regularFontSize);
+    font-size: var(--fontSizeR);
     font-weight: bold;
     color: #fff;
     z-index: 99;
@@ -30,7 +30,7 @@
 
 .desktopNav:hover,
 .scrolling {
-    background-color: var(--backgroundColor);
+    background-color: var(--bg1);
 }
 
 .mobileNav {
@@ -66,7 +66,7 @@
     top: 100%;
     right: 0;
     padding: 1rem;
-    background-color: var(--backgroundColor);
+    background-color: var(--bg1);
 }
 
 .subMenuItem {
@@ -91,7 +91,7 @@
     .mobileNav {
         display: grid;
         position: relative;
-        background-color: var(--backgroundColor);
+        background-color: var(--bg1);
     }
 
     .menu {
@@ -100,7 +100,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: var(--backgroundColor);
+        background-color: var(--bg1);
 
         display: grid;
         align-content: flex-start;

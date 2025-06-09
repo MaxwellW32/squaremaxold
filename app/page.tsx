@@ -1615,24 +1615,24 @@ export default function Home() {
       </section>
 
       <section>
-        <div style={{ display: 'flex', justifyContent: 'space-between', gap: "1rem", flexWrap: 'wrap', maxWidth: "1000px", margin: "0 auto", color: "var(--primaryColor)" }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', gap: "1rem", flexWrap: 'wrap', maxWidth: "1000px", margin: "0 auto", color: "var(--color1)" }}>
           <MyMetrics amount={100} amountAdd="+"
-            icon={<span style={{ fontSize: "var(--largeIconSize)", }} className="material-symbols-outlined">partner_exchange</span>}
+            icon={<span style={{ fontSize: "var(--iconSizeL)", }} className="material-symbols-outlined">partner_exchange</span>}
             text="Happy Clients" />
 
           <MyMetrics amount={50} amountAdd="+"
-            icon={<span style={{ fontSize: "var(--largeIconSize)", }} className="material-symbols-outlined">fact_check</span>}
+            icon={<span style={{ fontSize: "var(--iconSizeL)", }} className="material-symbols-outlined">fact_check</span>}
 
             text="Projects Complete" />
 
           <MyMetrics amount={4} amountAdd="+"
-            icon={<span style={{ fontSize: "var(--largeIconSize)", }} className="material-symbols-outlined">school</span>}
+            icon={<span style={{ fontSize: "var(--iconSizeL)", }} className="material-symbols-outlined">school</span>}
 
             text="Years of Experience" />
         </div>
       </section>
 
-      <section style={{ backgroundColor: "var(--secondaryColor)", display: "grid" }}>
+      <section style={{ backgroundColor: "var(--color2)", display: "grid" }}>
         <div style={{ display: "grid", justifyItems: "center" }}>
           <p className='supportingTitle2'>our services</p>
           <h1>What Do You Need?</h1>
@@ -1649,7 +1649,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section style={{ backgroundColor: "var(--backgroundColor)", color: "#fff", paddingBlock: "5rem" }}>
+      <section style={{ backgroundColor: "var(--bg1)", color: "#fff", paddingBlock: "5rem" }}>
         <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem", alignItems: 'center', maxWidth: "1100px", margin: "0 auto" }}>
           <div style={{ flex: "1 1 300px" }}>
             <Image alt={`reasons to choose us image`} src="https://images.pexels.com/photos/3184423/pexels-photo-3184423.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" height={1000} width={1000} style={{ objectFit: "cover", height: '100%', maxHeight: "80vh" }} />
@@ -1666,29 +1666,29 @@ export default function Home() {
               {
                 title: "Tailored Solutions",
                 text: "We believe in crafting solutions tailored to your unique needs. Our team takes the time to understand your business objectives, challenges, and vision.",
-                svg: <span style={{ fontSize: "var(--largeIconSize)", }} className="material-symbols-outlined">handyman</span>
+                svg: <span style={{ fontSize: "var(--iconSizeL)", }} className="material-symbols-outlined">handyman</span>
               },
               {
                 title: "Streamlined Process",
                 text: "Our streamlined development process ensures efficiency and transparency every step of the way.",
-                svg: <span style={{ fontSize: "var(--largeIconSize)", }} className="material-symbols-outlined">conversion_path</span>
+                svg: <span style={{ fontSize: "var(--iconSizeL)", }} className="material-symbols-outlined">conversion_path</span>
               },
               {
                 title: "Commitment to Excellence",
                 text: "Excellence is at the core of everything we do. We strive for perfection in every line of code, every design element, and every user interaction.",
-                svg: <span style={{ fontSize: "var(--largeIconSize)", }} className="material-symbols-outlined">social_leaderboard</span>
+                svg: <span style={{ fontSize: "var(--iconSizeL)", }} className="material-symbols-outlined">social_leaderboard</span>
               },
             ].map((eachItem, eachItemIndex) => {
               return (
                 <div key={eachItemIndex} style={{ display: "flex", gap: "1rem" }}>
-                  <div style={{ color: "var(--primaryColor)" }}>
+                  <div style={{ color: "var(--color1)" }}>
                     {eachItem.svg}
                   </div>
 
                   <div style={{ flex: "1 1 300px", display: "grid", gap: "1rem" }}>
                     <h3>{eachItem.title}</h3>
 
-                    <p style={{ color: "var(--fadedWhite)" }}>{eachItem.text}</p>
+                    <p style={{ color: "var(--shade1)" }}>{eachItem.text}</p>
                   </div>
                 </div>
               )

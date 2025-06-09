@@ -17,28 +17,27 @@ important: 1000
 */
 
 :root {
-    --primaryColor: #e52b50;
-    --secondaryColor: #F4F7FC;
-    --tertiaryColor: #0582f0;
-    --backgroundColor: #252628;
+    --color1: #e52b50;
+    --color2: #F4F7FC;
+    --color3: #0582f0;
 
-    --fadedWhite: #ddd;
-    --fadedWhite2: #777;
-    --faded3: #aaa;
-    --fadedTextColor: #111;
+    --bg1: #252628;
 
-    --mediumeFontWeight: 500;
-    --mediumFontWeight: 500;
+    --shade1: #ddd;
+    --shade2: #777;
+    --shade3: #aaa;
+    --shade4: #111;
 
+    --fontWeightM: 500;
 
-    --largerFontSize: 2.3rem;
-    --largeFontSize: 2rem;
-    --mediumFontSize: 1.3rem;
-    --regularFontSize: 1rem;
-    --smallFontSize: .7rem;
+    --fontSizeEL: 2.3rem;
+    --fontSizeL: 2rem;
+    --fontSizeM: 1.3rem;
+    --fontSizeR: 1rem;
+    --fontSizeS: .7rem;
 
-    --largeIconSize: 3rem;
-    --smallIconSize: 1.2rem;
+    --iconSizeL: 3rem;
+    --iconSizeS: 1.2rem;
 }
 
 html {
@@ -57,7 +56,7 @@ html {
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: var(--backgroundColor);
+    background-color: var(--bg1);
 }
 
 *::-webkit-scrollbar {
@@ -71,18 +70,17 @@ html {
 }
 
 body {
-    font-size: var(--regularFontSize);
+    font-size: var(--fontSizeR);
 }
 
 h1 {
     font-weight: bold;
-    font-size: var(--largeFontSize);
+    font-size: var(--fontSizeL);
     text-transform: capitalize;
-
 }
 
 h2 {
-    font-size: var(--mediumFontSize);
+    font-size: var(--fontSizeM);
     font-weight: bold;
 }
 
@@ -107,7 +105,7 @@ svg:hover {
 input,
 textarea {
     padding: 1rem;
-    background-color: var(--secondaryColor);
+    background-color: var(--color2);
     border-radius: .2rem;
     border: 1px solid #ddd;
 }
@@ -119,7 +117,7 @@ textarea:focus {
 }
 
 .mainButton {
-    background-color: var(--primaryColor);
+    background-color: var(--color1);
     border-radius: .5rem;
     text-transform: uppercase;
     color: #fff;
@@ -162,7 +160,7 @@ textarea:focus {
 
 .thirdButton {
     text-transform: capitalize;
-    background-color: var(--secondaryColor);
+    background-color: var(--color2);
     text-transform: uppercase;
     color: #000;
     font-weight: bold;
@@ -181,7 +179,7 @@ textarea:focus {
 }
 
 .thirdButton>div {
-    background-color: var(--primaryColor);
+    background-color: var(--color1);
     transition: background-color 400ms;
 }
 
@@ -191,7 +189,7 @@ textarea:focus {
 
 
 .thirdButton:hover {
-    background-color: var(--primaryColor);
+    background-color: var(--color1);
     color: #fff;
 }
 
@@ -201,7 +199,7 @@ textarea:focus {
 
 
 .thirdButtonHovering {
-    background-color: var(--primaryColor);
+    background-color: var(--color1);
     color: #fff;
 }
 
@@ -223,8 +221,8 @@ section {
 
 
 .highlight {
-    color: var(--primaryColor);
-    fill: var(--primaryColor);
+    color: var(--color1);
+    fill: var(--color1);
 }
 
 .hoverHighlight:hover {
@@ -232,8 +230,8 @@ section {
 }
 
 .hoverHighlight:hover {
-    color: var(--primaryColor);
-    fill: var(--primaryColor);
+    color: var(--color1);
+    fill: var(--color1);
 }
 
 .noDisplay {
@@ -249,7 +247,7 @@ section {
 }
 
 .closeButton:hover {
-    color: var(--primaryColor);
+    color: var(--color1);
     rotate: 10deg;
 }
 
@@ -333,7 +331,7 @@ section {
 
 .supportingTitle2 {
     text-transform: uppercase;
-    color: var(--primaryColor);
+    color: var(--color1);
     font-weight: bold;
 }
 

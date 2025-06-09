@@ -40,8 +40,8 @@ export default function MyMetrics({ icon, amount, amountAdd, text, animateTime =
         <div ref={ref} style={{ display: "flex", flexWrap: "wrap", gap: "1rem", }}>
             {icon}
 
-            <div style={{ flex: 1, color: "var(--primaryColor)" }}>
-                <p style={{ fontSize: "var(--largeFontSize)", fontWeight: "bold" }}>{animateAmount}{amountAdd}</p>
+            <div style={{ flex: 1, color: "var(--color1)" }}>
+                <p style={{ fontSize: "var(--fontSizeL)", fontWeight: "bold" }}>{animateAmount}{amountAdd}</p>
 
                 <p style={{ opacity: ".8" }}>{text}</p>
             </div>

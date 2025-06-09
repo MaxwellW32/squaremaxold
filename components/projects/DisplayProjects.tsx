@@ -8,7 +8,7 @@ export default function DisplayProjects({ seenProjectData }: { seenProjectData: 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(min(250px, 100%),1fr))", gap: "1rem" }}>
             {seenProjectData.map(eachProject => {
                 return (
-                    <Link key={eachProject.slug} href={`/projects/${eachProject.slug}`} style={{ backgroundColor: "var(--backgroundColor)", display: "grid", gridTemplateRows: "1fr auto", aspectRatio: "1/2" }}>
+                    <Link key={eachProject.slug} href={`/projects/${eachProject.slug}`} style={{ backgroundColor: "var(--bg1)", display: "grid", gridTemplateRows: "1fr auto", aspectRatio: "1/2" }}>
                         <div style={{ overflow: "hidden" }}>
                             <Image alt={`${eachProject.name}'s image`} src={eachProject.image} width={500} height={500} style={{ objectFit: "cover", width: "100%", height: "100%" }} />
                         </div>
@@ -19,7 +19,7 @@ export default function DisplayProjects({ seenProjectData }: { seenProjectData: 
                             <div className='noScrollBar' style={{ display: "flex", gap: "1rem", overflowX: "auto" }}>
                                 {eachProject.categoryStyles.map((eachCategoryStyle, eachCategoryStyleIndex) => {
                                     return (
-                                        <div key={eachCategoryStyleIndex} style={{ borderRadius: "2rem", textTransform: "capitalize", fontSize: "var(--smallFontSize)", padding: ".5rem 1rem", backgroundColor: "var(--tertiaryColor)" }}>
+                                        <div key={eachCategoryStyleIndex} style={{ borderRadius: "2rem", textTransform: "capitalize", fontSize: "var(--fontSizeS)", padding: ".5rem 1rem", backgroundColor: "var(--color3)" }}>
                                             {eachCategoryStyle}
                                         </div>
                                     )
@@ -29,7 +29,7 @@ export default function DisplayProjects({ seenProjectData }: { seenProjectData: 
                             <div className='noScrollBar' style={{ display: "flex", gap: "1rem", overflowX: "auto" }}>
                                 {eachProject.representingService.map((eachService, eachServiceIndex) => {
                                     return (
-                                        <div key={eachServiceIndex} style={{ borderRadius: "2rem", textTransform: "capitalize", fontSize: "var(--smallFontSize)", padding: ".5rem 1rem", backgroundColor: "var(--primaryColor)" }}>
+                                        <div key={eachServiceIndex} style={{ borderRadius: "2rem", textTransform: "capitalize", fontSize: "var(--fontSizeS)", padding: ".5rem 1rem", backgroundColor: "var(--color1)" }}>
                                             {eachService}
                                         </div>
                                     )

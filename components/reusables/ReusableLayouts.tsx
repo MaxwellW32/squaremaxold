@@ -23,7 +23,7 @@ export default function ReusableLayouts() {
 
             <h1>3 part Image layout</h1>
             <div style={{ display: "flex", gap: "1rem" }}>
-                <div className='resizeSvg' style={{ width: "4rem", fill: "var(--primaryColor)" }}>
+                <div className='resizeSvg' style={{ width: "4rem", fill: "var(--color1)" }}>
                     {/* svg */}
                 </div>
 

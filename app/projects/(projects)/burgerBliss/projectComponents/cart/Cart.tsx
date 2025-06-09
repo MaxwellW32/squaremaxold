@@ -54,7 +54,7 @@ export default function Cart() {
             <div className={styles.cart} style={{ display: !showingCart ? "none" : "grid", gap: ".5rem", gridTemplateRows: "auto 1fr auto", zIndex: 99, position: "absolute", top: "100%", right: 0, maxHeight: "70vh", width: "min(400px, 100%)", backgroundColor: "#fff", color: "#000", padding: "1rem" }}>
                 <div style={{ display: "flex", justifyContent: 'space-between', gap: "1rem", alignItems: "center" }}>
                     {cartItems.length > 0 && (
-                        <button style={{ fontSize: "var(--smallFontSize)", cursor: "pointer", justifySelf: "flex-start", display: "flex", alignItems: "center", gap: ".2rem" }}
+                        <button style={{ fontSize: "var(--fontSizeS)", cursor: "pointer", justifySelf: "flex-start", display: "flex", alignItems: "center", gap: ".2rem" }}
                             onClick={() => {
                                 cartItemsSet([])
                                 showingCartSet(false)
@@ -112,7 +112,7 @@ export default function Cart() {
                                                             })
                                                         }}
                                                     >
-                                                        <span style={{ fontSize: "var(--smallIconSize)" }} className="material-symbols-outlined">
+                                                        <span style={{ fontSize: "var(--iconSizeS)" }} className="material-symbols-outlined">
                                                             remove
                                                         </span>
                                                     </button>
@@ -149,7 +149,7 @@ export default function Cart() {
                                                             })
                                                         }}
                                                     >
-                                                        <span style={{ fontSize: "var(--smallIconSize)" }} className="material-symbols-outlined">
+                                                        <span style={{ fontSize: "var(--iconSizeS)" }} className="material-symbols-outlined">
                                                             add
                                                         </span>
                                                     </button>
@@ -162,7 +162,7 @@ export default function Cart() {
                                                         })
                                                     }}
                                                 >
-                                                    <span style={{ fontSize: "var(--smallIconSize)" }} className="material-symbols-outlined">
+                                                    <span style={{ fontSize: "var(--iconSizeS)" }} className="material-symbols-outlined">
                                                         delete
                                                     </span>
                                                 </button>

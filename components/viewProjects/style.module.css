@@ -24,7 +24,7 @@
 
 
 .buttonCont button {
-    background-color: var(--primaryColor);
+    background-color: var(--color1);
     border-radius: .5rem;
     text-transform: uppercase;
     color: #fff;

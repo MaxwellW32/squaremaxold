@@ -1,23 +1,23 @@
 .mainLayout {
     --extraLargeFontSize: calc(15vw + 1px);
-    --largeFontSize: clamp(40px, 7vw + 1px, 178px);
-    --mediumFontSize: 40px;
-    --regularFontSize: 30px;
-    --smallFontSize: 20px;
+    --fontSizeL: clamp(40px, 7vw + 1px, 178px);
+    --fontSizeM: 40px;
+    --fontSizeR: 30px;
+    --fontSizeS: 20px;
     --extraSmallFontSize: 8px;
 
     --mediumIconSize: 60px;
 
     --color1: #FF2B59;
     --color2: #F1FF4F;
-    --backgroundColor: #191926;
+    --bg1: #191926;
     --gray1: #EBE2D0;
 
 
 
     font-family: var(--lato);
-    font-size: var(--regularFontSize);
-    background-color: var(--backgroundColor);
+    font-size: var(--fontSizeR);
+    background-color: var(--bg1);
     color: var(--gray1);
 }
 
@@ -45,7 +45,7 @@
 }
 
 .headingCont>h1 {
-    font-size: var(--largeFontSize);
+    font-size: var(--fontSizeL);
 }
 
 .headingCont>p:first-of-type {
@@ -100,7 +100,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--backgroundColor);
+    background-color: var(--bg1);
     padding: 5rem 1rem 1rem 1rem;
     z-index: 98;
 
@@ -164,7 +164,7 @@
     align-items: center;
     justify-items: center;
     border-radius: 3px;
-    font-size: var(--smallFontSize);
+    font-size: var(--fontSizeS);
     padding: .5rem 1rem;
 }
 

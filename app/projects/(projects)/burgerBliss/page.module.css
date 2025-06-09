@@ -1,27 +1,27 @@
 .main {
     font-size: 16px;
     --extraLargeFontSize: calc(1em + 10vw);
-    --largeFontSize: 3.125em;
+    --fontSizeL: 3.125em;
     --mediumLargeFontSize: 1.5em;
-    --mediumFontSize: 1.875em;
+    --fontSizeM: 1.875em;
     --mediumSmallFontSize: 1.25em;
-    --regularFontSize: 1em;
-    --smallFontSize: 0.0625em;
+    --fontSizeR: 1em;
+    --fontSizeS: 0.0625em;
 
-    --largeIconSize: 5em;
+    --iconSizeL: 5em;
     --mediumIconSize: 3em;
     --normalIconSize: 2em;
-    --smallIconSize: 1em;
+    --iconSizeS: 1em;
 
     --color1: #EF3D5B;
     --color2: #DC9457;
     --color3: #57B957;
-    --backgroundColor: #1c2123;
+    --bg1: #1c2123;
     --gray1: #9b9b9b;
     --gray2: #e7e7e7;
 
     /* styling */
-    background-color: var(--backgroundColor);
+    background-color: var(--bg1);
     font-family: var(--rubik);
     position: relative;
 }
@@ -33,7 +33,7 @@
 }
 
 .main h1 {
-    font-size: var(--largeFontSize);
+    font-size: var(--fontSizeL);
     font-weight: bold;
     color: #fff;
     text-transform: uppercase;

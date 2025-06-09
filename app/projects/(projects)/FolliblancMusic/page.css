@@ -5,7 +5,7 @@
 }
 
 .slideTextBg {
-    color: var(--backgroundColor) !important;
+    color: var(--bg1) !important;
     overflow: visible;
 }
 

@@ -159,7 +159,7 @@ export default function ItemPicker({ items, sizePre = 250, horizantal = false, s
 
 
             <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", justifyContent: "center" }}>
-                <p style={{ color: "var(--color2)", fontSize: "var(--mediumFontSize)" }}>{formatter.format(items[activeIndex]?.price)}</p>
+                <p style={{ color: "var(--color2)", fontSize: "var(--fontSizeM)" }}>{formatter.format(items[activeIndex]?.price)}</p>
 
                 <button className={styles.cartButton} style={{ zIndex: 1, position: "relative", color: amountOfItemInCart > 0 ? "var(--color2)" : "" }}
                     onClick={() => {

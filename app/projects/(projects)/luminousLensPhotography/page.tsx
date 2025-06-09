@@ -61,7 +61,7 @@ export default function Page() {
                         </div>
 
                         <div style={{ flex: "2 1 300px", display: "grid", gap: "1rem", alignContent: "flex-start", color: "var(--gray1)" }}>
-                            <p className={styles.highlight} style={{ textTransform: "uppercase", fontFamily: "var(--JuliusSansOne)", fontSize: "var(--mediumFontSize)" }}>we believe that every picture tells a story</p>
+                            <p className={styles.highlight} style={{ textTransform: "uppercase", fontFamily: "var(--JuliusSansOne)", fontSize: "var(--fontSizeM)" }}>we believe that every picture tells a story</p>
 
                             <p>Our passion is capturing the unique moments that make life beautiful, whether it&apos;s a wedding, a family reunion, or a personal portrait.</p>
 
